@@ -193,4 +193,13 @@ router.delete('/books/:bookId', (req, res) => {
   });
 });
 
+router.delete('/books/remove', (req, res) => {
+  books.length = 0;
+
+  return res.json({
+    status: 'success',
+    message: 'Semua buku berhasil dihapus',
+  });
+});
+
 module.exports = router;
