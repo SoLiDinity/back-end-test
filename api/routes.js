@@ -193,7 +193,7 @@ router.delete('/books/:bookId', (req, res) => {
   });
 });
 
-router.delete('/books/remove', (req, res) => {
+router.delete('/books', (req, res) => {
   books.length = 0;
 
   return res.json({
