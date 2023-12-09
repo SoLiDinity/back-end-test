@@ -1,22 +1,12 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const Hapi = require('@hapi/hapi');
+const express = require('express');
 const routes = require('./routes');
 
-const init = async () => {
-  const server = Hapi.server({
-    port: process.env.PORT || 3000,
-    host: '0.0.0.0',
-    routes: {
-      cors: {
-        origin: ['*'],
-      },
-    },
-  });
+const app = express();
 
-  server.route(routes);
+// Middleware to parse JSON
+app.use(express.json());
 
-  await server.start();
-  console.log(`Server berjalan pada ${server.info.uri}`);
-};
+// Routes
+app.use('/', routes);
 
-init();
+module.exports = app; // Mengexport app agar dapat digunakan oleh Vercel
