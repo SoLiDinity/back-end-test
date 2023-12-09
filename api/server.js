@@ -7,6 +7,6 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use('/api', routes);
+app.use('/', routes);
 
 module.exports = app; // Mengexport app agar dapat digunakan oleh Vercel
