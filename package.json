@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./api/server.js",
-    "start-dev": "nodemon ./api/server.js",
+    "start-dev": "nodemon ./api/server-dev.js",
     "lint": "eslint ./api"
   },
   "keywords": [],

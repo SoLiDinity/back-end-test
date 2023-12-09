@@ -7,7 +7,7 @@
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "api/$1" },
+    { "src": "/books/(.*)", "dest": "api/server.js" },
     { "src": "/(.*)", "dest": "api/server.js" }
   ]
 }
